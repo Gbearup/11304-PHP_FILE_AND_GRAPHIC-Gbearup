@@ -88,24 +88,7 @@ function del($table ,$id){
  * @return boolean
  */
 
-/**假設都是帶有id的 */
-function update($table,$array){
-    $sql="update $table set ";
-    $pdo=$pdo=pdo(DBNAME);
-    $tmp=[];
-    if(isset($array['id'])){
-        $id=$array['id'];
-        unset($array['id']);/**刪除陣列裡id這個變數 */
-    
-    foreach($array as $key => $value){
-        $tmp[]="`$key`='$value'";
-    }
-    $sql=$sql . join(",",$tmp) . "where `id`='$id'";
-}   
-    return $pdo->exec($sql);
-}
-
-/*function update($table,$array,$id){
+function update($table,$array,$id){
     $sql="update $table set ";
     $pdo=$pdo=pdo(DBNAME);
     $tmp=[];
@@ -126,7 +109,9 @@ function update($table,$array){
     }
 
     return $pdo->exec($sql);
-}*/
+
+
+}
 
 /**
  * 新增資料

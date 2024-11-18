@@ -26,17 +26,14 @@
     </style>
 </head>
 <body>
- <h1 class="header">檔案上傳練習</h1>
+ <h1 class="header">編輯資料</h1>
  <!----建立你的表單及設定編碼----->
 <!-- 檔案格式的宣告 -->
- <form action="manage.php" method="post" enctype="multipart/form-data">
- <input type="file" name="filename" id="file">
- <input type="text" name="desc" id="desc">
+ <form action="update_img.php" method="post" enctype="multipart/form-data">
+ <input type="file" name="img" id="file">
+ <input type="hidden" name="imgName" value="<?=$_GET['id']?>">
+ <input type="text" name="name" id="name">
  <input type="submit" value="上傳">
-
-
-
-
 
  </form>
 
