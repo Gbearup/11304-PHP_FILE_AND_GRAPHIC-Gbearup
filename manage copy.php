@@ -38,7 +38,7 @@ include_once "function.php";
 // echo "<br>";
 // dd($_FILES);
 
-
+// 用來檢查檔案是否存在於表單中，即檢查是否有使用者選擇檔案並提交。如果檔案存在（即有使用者上傳檔案），則會執行內部的代碼區塊。
 if(isset($_FILES['img'])){
 if($_FILES['img']['error']==0){
 
@@ -60,8 +60,6 @@ $items=array_diff($items,array('.','..'));
 foreach($items as $file){
     echo "<div>";
     echo "<img src='{$dirpath}/{$file}'>";
-    echo "<a href='del_img.php?file={$file}'>刪除</a>";
-    echo "<a href='re_upload.php?file={$file}'>重新上傳</a>";
     echo "</div>";
 
 
