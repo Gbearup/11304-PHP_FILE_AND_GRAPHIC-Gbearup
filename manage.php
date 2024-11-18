@@ -16,6 +16,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>檔案管理功能</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .item{
+            width:200px;
+        }
+        .item img{
+            width:100%;
+        }
+
+
+    </style>
 </head>
 <body>
 <h1 class="header">檔案管理練習</h1>
@@ -23,18 +33,43 @@
 <?php
 
 include_once "function.php";
-echo $_POST['name'];
-echo "<br>";
-dd($_FILES);
 
+// echo $_POST['name'];
+// echo "<br>";
+// dd($_FILES);
+
+
+if(isset($_FILES['img'])){
 if($_FILES['img']['error']==0){
-move_uploaded_file($_FILES['img']['tmp_name'],"./files/".$_FILES['img']['name']);
+
+    move_uploaded_file($_FILES['img']['tmp_name'],"./files/".$_FILES['img']['name']);
+
+}else{
+
+    echo "上傳失敗，請檢查檔案格式或是大小是否符合規定";
+}
+}
+?>
+<!----透過資料表來顯示檔案的資訊，並可對檔案執行更新或刪除的工作----->
+<?php
+$dirpath="./files";
+
+$items=scandir($dirpath);
+$items=array_diff($items,array('.','..'));
+
+foreach($items as $file){
+    echo "<div>";
+    echo "<img src='{$dirpath}/{$file}'>";
+    echo "</div>";
+
+
 }
 
 
-
-
 ?>
+
+
+
 
 <!----透過資料表來顯示檔案的資訊，並可對檔案執行更新或刪除的工作----->
 
