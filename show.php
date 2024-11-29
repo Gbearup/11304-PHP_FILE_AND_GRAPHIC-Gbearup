@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>相簿</title>
 </head>
 <body>
-    <?php
+
+<h1>相簿</h1>
+
+
+
+<?php
+
+include_once "function.php";
 $rows=all('imgs');
-echo "<table>";
+
+
 foreach($rows as $file){
-    echo "<tr>";
-    echo " <td><img src='files/{$file['filename']}'></td>";
+    echo "<div>";
+    echo " <img src='files/{$file['filename']}'></br>";
     echo " <td>{$file['desc']}</td>";
-    echo " <td><a href='del_img.php?id={$file['id']}'>刪除</a></td>";
-    echo " <td><a href='re_upload.php?id={$file['id']}'>重新上傳</a></td>";
+    echo " <td><$file['id']}'>重新上傳</a></td>";
     echo "</tr>";
 }
 echo "</table>";
