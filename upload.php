@@ -16,11 +16,26 @@
     <title>檔案上傳</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        body{
+            background-image:url(./iimages.jpg);
+            background-repeat: no-repeat; /* 避免圖片重複 */
+            background-size: cover; /* 確保圖片完整顯示在容器內 contain*/
+            background-position: center center;
+
+            width: 90%;
+            height: 100vh;
+            margin: auto;
+
+            
+            
+        }
+
         form{
             width: 300px;
             margin: 20px auto;
             padding: 20px;
             border: 1px solid #ccc;
+            border-radius: 10px;
         }
 
     </style>
@@ -30,13 +45,9 @@
  <!----建立你的表單及設定編碼----->
 <!-- 檔案格式的宣告 -->
  <form action="manage.php" method="post" enctype="multipart/form-data">
- <input type="file" name="filename" id="file">
- <input type="text" name="desc" id="desc">
- <input type="submit" value="上傳">
-
-
-
-
+    <input type="file" name="filename" id="file"><br><br>
+    <input type="text" name="desc" id="desc">
+    <input type="submit" value="上傳">
 
  </form>
 

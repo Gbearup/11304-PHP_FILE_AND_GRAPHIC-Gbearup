@@ -1,6 +1,6 @@
 ﻿<?php
 
-define("DBNAME","s1130201");
+define("DBNAME","file");
 
 /**
  * 建立資料庫的連線變數

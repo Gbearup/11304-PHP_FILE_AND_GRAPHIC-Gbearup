@@ -8,15 +8,27 @@
     text-decoration: none;
 }
 
+body{
+    background-image: url(./images.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+}
+
 .types {
     display: block;
     width: 400px;
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 10px;
     height: 100px;
-    border: 1px solid gray;
+    border: 2px solid yellowgreen;
     border-radius: 50px;
     box-shadow: 2px 2px 5px #ccc;
+    
 }
 
 .types div {
@@ -28,7 +40,7 @@
 
 
 .types:hover {
-    border: 2px solid plum;
+    border: 5px solid plum;
     background: lightcyan;
 }
 
